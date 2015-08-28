@@ -1,6 +1,6 @@
-ifpress.org - System Design
+# ifpress.org - System Design
 
-### Requirements
+## Requirements
 
  * authors must log in to create content
  * users can view without logging in
