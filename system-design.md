@@ -21,12 +21,15 @@
    * edit layout of page for every turn in walk-through
      * create intro page(s)
      * create tutorial page(s)
-     * create pages by filter
+     * create base page
+       * add global content types and designs
+     * create pages by filter (inherits base page)
        * default
        * chapter
        * turn range
        * time range
        * custom ('template' content type is returned)
+     * add content types to page for selected filter
    * publish story
      * privately
        * author has access
@@ -42,5 +45,7 @@
      * chat with others playing same public story
    * when logged in
      * browse public and private stories
-     * 
-   * 
+     * play public and private stories
+     * comment on public and private stories
+     * chat with others playing same public or private story
+ * 
