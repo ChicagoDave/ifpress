@@ -3,18 +3,43 @@
 
 ### Requirements
 
- * authors must log in to create content
+ * authors must log in to manage stories
  * users can view without logging in
  * authors have ability to
    * log in to back-end administration system
    * create new projects
-   * authorize other users access to projects
+   * authorize users to access projects
    * import a ulx or blorb file to a project
+   * create/edit templates
+     * layout engine
+       * Bootstrap
+     * background color
+     * foreground color
+     * default font
+     * mono-spaced font
+     * static image(s)
    * edit layout of page for every turn in walk-through
-   * publish story privately or publicly
+     * create intro page(s)
+     * create tutorial page(s)
+     * create pages by filter
+       * default
+       * chapter
+       * turn range
+       * time range
+       * custom ('template' content type is returned)
+   * publish story
+     * privately
+       * author has access
+       * selected users have access
+     * publicly
+     * feedback system enabled/disabled
+     * social networking enabled/disabled
  * users have ability to
    * when not logged in
      * browse public stories
+     * play public stories
+     * comment on public stories
+     * chat with others playing same public story
    * when logged in
      * browse public and private stories
      * 
