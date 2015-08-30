@@ -12,6 +12,17 @@
    * authorize users to access projects
    * import a ulx or blorb file to a project
    * create/edit templates
+     * properties
+       * header
+       * footer
+       * navigation
+         * standard
+         * custom
+       * 1 column
+       * 2 columns
+       * 3 columns
+       * 4 columns
+     * identify responsive/mobile/desktop capability
      * layout engine
        * Bootstrap
      * background color
@@ -49,4 +60,5 @@
      * play public and private stories
      * comment on public and private stories
      * chat with others playing same public or private story
+ * JSON-based templates and configuration (not XML)
  * 
