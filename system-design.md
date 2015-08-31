@@ -61,4 +61,16 @@
      * comment on public and private stories
      * chat with others playing same public or private story
  * JSON-based templates and configuration (not XML)
- * 
+
+### Stories
+### Templates
+### Pages
+### Widgets
+### Themes
+### Administration
+### Publishing
+### Security
+### Self-Hosting
+### Host on ifpress.org
+
+
