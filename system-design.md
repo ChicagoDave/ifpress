@@ -62,15 +62,24 @@
      * chat with others playing same public or private story
  * JSON-based templates and configuration (not XML)
 
-### Stories
-### Templates
-### Pages
-### Widgets
-### Themes
-### Administration
-### Publishing
-### Security
-### Self-Hosting
-### Host on ifpress.org
+## Stories
+
+IF Stories are compiled using Inform 7 (inform7.com). To be compatible with ifpress.org, they will need to include I7 extensions found at the fyrevm-web github repository.
+
+There will be a Core extension that takes care of the basic necessities.
+
+Then there will be additional and optional extensions based on each author's interests.
+
+One of the basic requirements will be for the author to implement ifpress.org settings, so that's going to be a separate extension (you can create FyreVM games without publishing to ifpress.org). Included will be a walk-through (comma separated list of commands to complete game and touch as many parts of the story as possible). This will likely flow through a "ifpress" content type and return JSON.
+
+## Templates
+## Pages
+## Widgets
+## Themes
+## Administration
+## Publishing
+## Security
+## Self-Hosting
+## Host on ifpress.org
 
 
