@@ -76,7 +76,7 @@ One of the basic requirements will be for the author to implement ifpress.org se
 ## Pages
 ## Content Types
 
-### Base Content Types from FyreVM Core
+### Base Content Types
 
 Any of these content types can be used in a widget. Note that some content types contain JSON and would require transformation and others are contextually emitted (not available every turn):
 
@@ -91,13 +91,13 @@ Any of these content types can be used in a widget. Note that some content types
  - {{story-info}} - (JSON) meta data used to build "about" and "credits" information
  - {{score-notify}} - text emitted when score changes (optional)
 
-### Extended Content Types from ifpress.org extension (required)
+### ifpress.org Core Content Types (required)
 
- - walk-through - (JSON) list of commands to traverse to build content model from uploaded story
+ - {{walk-through}} - (JSON) list of commands to traverse to build content model from uploaded story
 
-### Extended Content Types for Images for ifpress.org (optional)
+### ifpress.org Image Content Type (optional)
 
- - image list - (JSON) list of image file names
+ - {{image list}} - (JSON) list of image file names
 
 ## Widgets
 
