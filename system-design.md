@@ -75,6 +75,17 @@ One of the basic requirements will be for the author to implement ifpress.org se
 ## Templates
 ## Pages
 ## Widgets
+
+Widgets are the visual representations of content types found within a given story. This is where each story can display context in visually different ways. Any given content type may have many different related widgets since there are many different ways of displaying the same content.
+
+Some widgets may encapsulate multiple content types too. An example of this might be a standard status line, which contains the location name, the turn, and the score. Here's an example widget in source form:
+
+  <div class="ifp-status-line">
+    <span class="ifp-left">{{location-name}}</span>
+    <span class="ifp-right">{{score}}</span>
+    <span class="ifp-right">{{turn}}</span>
+  </div>
+
 ## Themes
 ## Administration
 ## Publishing
