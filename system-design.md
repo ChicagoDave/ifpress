@@ -78,7 +78,6 @@ One of the basic requirements will be for the author to implement ifpress.org se
 
 ### Base Content Types from FyreVM Core
 
- - walk-through - (JSON) list of commands to traverse to build content model from uploaded story
  - main - main text emitted from story progress
  - prompt - prompt or textual prefix to command line (optional)
  - location-name - name of current story location
@@ -89,6 +88,14 @@ One of the basic requirements will be for the author to implement ifpress.org se
  - turn - number of turns taken in story (optional)
  - story-info - (JSON) meta data used to build "about" and "credits" information
  - score-notify - text emitted when score changes (optional)
+
+### Extended Content Types from ifpress.org extension (required)
+
+ - walk-through - (JSON) list of commands to traverse to build content model from uploaded story
+
+### Extended Content Types for Images for ifpress.org (optional)
+
+ - image list - (JSON) list of image file names
 
 ## Widgets
 
