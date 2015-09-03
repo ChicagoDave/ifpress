@@ -85,19 +85,21 @@ One of the basic requirements will be for the author to implement ifpress.org se
 There is a small technical leap from what is emitted by the virtual machine to being usable by ifpress.org. This is a simple mapping exercise that is automated by a well-known content-type called TYPE. This content type will contain the mappings of any content types defined within a given extension. When a story is loaded, the TYPE content type will contain a JSON structure as shown below:
 
 ```
-[
-  { module: 'fyrevm-core.ts' }
-  { channel: 'MAIN', contentType: 'main' },
-  { channel: 'PRPT', contentType: 'prompt' },
-  { channel: 'LOCN', contentType: 'location-name' },
-  { channel: 'SCOR', contentType: 'score' },
-  { channel: 'TIME', contentType: 'time' },
-  { channel: 'DEAD', contentType: 'death' },
-  { channel: 'ENDG', contentType: 'end-game' },
-  { channel: 'TURN', contentType: 'turn' },
-  { channel: 'INFO', contentType: 'story-info' },
-  { channel: 'NTFY', contentType: 'score-notify' }
-]
+{
+  module: 'fyrevm-core.ts',
+  mappings: [
+    { channel: 'MAIN', contentType: 'main' },
+    { channel: 'PRPT', contentType: 'prompt' },
+    { channel: 'LOCN', contentType: 'location-name' },
+    { channel: 'SCOR', contentType: 'score' },
+    { channel: 'TIME', contentType: 'time' },
+    { channel: 'DEAD', contentType: 'death' },
+    { channel: 'ENDG', contentType: 'end-game' },
+    { channel: 'TURN', contentType: 'turn' },
+    { channel: 'INFO', contentType: 'story-info' },
+    { channel: 'NTFY', contentType: 'score-notify' }
+  ]
+}
 ```
 
 ### Content Type Module Definitions (for extension authors)
@@ -107,8 +109,39 @@ For every extension that defines content types, a TypeScript module is required.
 ```
 module fyreVMCore {
 
+  interface Serializable<T> {
+      deserialize(input: Object): T;
+  }
 
+  class ContentType implements Serializable<ContentType> {
+      channel: string;
+      contentType: string;
 
+      deserialize(input) {
+          this.channel = input.channel;
+          this.contentType = input.contentType;
+          return this;
+      }
+  }
+
+  class ContentTypeDefinition implements Serializable<ContentTypeDefinition> {
+      module: string;
+      mappings: Array<ContentType>;
+
+      deserialize(input) {
+          this.module = input.module;
+
+          for (var mapping in input.mappings) {
+            var contentType = new ContentType();
+            contentType.channel = mapping.channel;
+            contentType.contentType = mapping.contentType;
+
+            this.mappings.add(contentType);
+          }
+
+          return this;
+      }
+  }
 }
 ```
 ### Base Content Types
