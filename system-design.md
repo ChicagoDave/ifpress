@@ -80,11 +80,13 @@ Widgets are the visual representations of content types found within a given sto
 
 Some widgets may encapsulate multiple content types too. An example of this might be a standard status line, which contains the location name, the turn, and the score. Here's an example widget in source form:
 
+```
   <div class="ifp-status-line">
     <span class="ifp-left">{{location-name}}</span>
     <span class="ifp-right">{{score}}</span>
     <span class="ifp-right">{{turn}}</span>
   </div>
+```
 
 ## Themes
 ## Administration
