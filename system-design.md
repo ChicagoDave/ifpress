@@ -81,7 +81,7 @@ One of the basic requirements will be for the author to implement ifpress.org se
  - walk-through - (JSON) list of commands to traverse to build content model from uploaded story
  - main - main text emitted from story progress
  - prompt - prompt or textual prefix to command line (optional)
- - location - name of current story location
+ - location-name - name of current story location
  - score - current score (optional)
  - time - current time within story (optional)
  - death - text emitted upon death within story (optional)
