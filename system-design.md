@@ -62,6 +62,10 @@
      * chat with others playing same public or private story
  * JSON-based templates and configuration (not XML)
 
+## Technology
+
+ifpress.org is built on Angular 2, TypeScript, and Boostrap. The hosted service runs on Apache 2 and MongoDB, while the self-hosted version runs on Apache 2 alone. We use MongoDB for user credentials, which isn't required for self-hosting.
+
 ## Stories
 
 IF Stories are compiled using Inform 7 (inform7.com). To be compatible with ifpress.org, they will need to include I7 extensions found at the fyrevm-web github repository.
@@ -76,12 +80,13 @@ One of the basic requirements will be for the author to implement ifpress.org se
 ## Pages
 ## Content Types
 
-### Comtent Type Mapping
+### Comtent Type Mapping (for extension authors)
 
 There is a small technical leap from what is emitted by the virtual machine to being usable by ifpress.org. This is a simple mapping exercise that is automated by a well-known content-type called TYPE. This content type will contain the mappings of any content types defined within a given extension. When a story is loaded, the TYPE content type will contain a JSON structure as shown below:
 
 ```
 [
+  { module: 'fyrevm-core.ts' }
   { channel: 'MAIN', contentType: 'main' },
   { channel: 'PRPT', contentType: 'prompt' },
   { channel: 'LOCN', contentType: 'location-name' },
@@ -95,8 +100,17 @@ There is a small technical leap from what is emitted by the virtual machine to b
 ]
 ```
 
-This is important to extension authors to enable the usage of any newly defined content types within ifpress.org.
+### Content Type Module Definitions (for extension authors)
 
+For every extension that defines content types, a TypeScript module is required.
+
+```
+module fyreVMCore {
+
+
+
+}
+```
 ### Base Content Types
 
 Any of these content types can be used in a widget. Note that some content types contain JSON and would require transformation and others are contextually emitted (not available every turn):
