@@ -95,6 +95,8 @@ There is a small technical leap from what is emitted by the virtual machine to b
 ]
 ```
 
+This is important to extension authors to enable the usage of any newly defined content types within ifpress.org.
+
 ### Base Content Types
 
 Any of these content types can be used in a widget. Note that some content types contain JSON and would require transformation and others are contextually emitted (not available every turn):
