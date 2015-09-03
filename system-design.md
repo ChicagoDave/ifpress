@@ -74,6 +74,22 @@ One of the basic requirements will be for the author to implement ifpress.org se
 
 ## Templates
 ## Pages
+## Content Types
+
+### Base Content Types from FyreVM Core
+
+ - walk-through - (JSON) list of commands to traverse to build content model from uploaded story
+ - main - main text emitted from story progress
+ - prompt - prompt or textual prefix to command line (optional)
+ - location - name of current story location
+ - score - current score (optional)
+ - time - current time within story (optional)
+ - death - text emitted upon death within story (optional)
+ - end-game - text emitted when story ends (optional)
+ - turn - number of turns taken in story (optional)
+ - story-info - (JSON) meta data used to build "about" and "credits" information
+ - score-notify - text emitted when score changes (optional)
+
 ## Widgets
 
 Widgets are the visual representations of content types found within a given story. This is where each story can display context in visually different ways. Any given content type may have many different related widgets since there are many different ways of displaying the same content.
