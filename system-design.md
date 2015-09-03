@@ -78,6 +78,7 @@ One of the basic requirements will be for the author to implement ifpress.org se
 
 ### Base Content Types from FyreVM Core
 
+ <em>- {{content type}} - description</em>
  - main - main text emitted from story progress
  - prompt - prompt or textual prefix to command line (optional)
  - location-name - name of current story location
