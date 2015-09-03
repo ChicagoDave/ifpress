@@ -76,6 +76,25 @@ One of the basic requirements will be for the author to implement ifpress.org se
 ## Pages
 ## Content Types
 
+### Comtent Type Mapping
+
+There is a small technical leap from what is emitted by the virtual machine to being usable by ifpress.org. This is a simple mapping exercise that is automated by a well-known content-type called TYPE. This content type will contain the mappings of any content types defined within a given extension. When a story is loaded, the TYPE content type will contain a JSON structure as shown below:
+
+```
+[
+  { channel: 'MAIN', contentType: 'main' },
+  { channel: 'PRPT', contentType: 'prompt' },
+  { channel: 'LOCN', contentType: 'location-name' },
+  { channel: 'SCOR', contentType: 'score' },
+  { channel: 'TIME', contentType: 'time' },
+  { channel: 'DEAD', contentType: 'death' },
+  { channel: 'ENDG', contentType: 'end-game' },
+  { channel: 'TURN', contentType: 'turn' },
+  { channel: 'INFO', contentType: 'story-info' },
+  { channel: 'NTFY', contentType: 'score-notify' }
+]
+```
+
 ### Base Content Types
 
 Any of these content types can be used in a widget. Note that some content types contain JSON and would require transformation and others are contextually emitted (not available every turn):
