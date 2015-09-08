@@ -173,12 +173,41 @@ Widgets are the visual representations of content types found within a given sto
 
 Some widgets may encapsulate multiple content types too. An example of this might be a standard status line, which contains the location name, the turn, and the score. Here's an example widget in source form:
 
+HTML Style
 ```
   <div class="ifp-status-line">
     <span class="ifp-left">{{location-name}}</span>
     <span class="ifp-right">{{score}}</span>
     <span class="ifp-right">{{turn}}</span>
   </div>
+```
+
+JavaScript Style
+```
+  class Widget {
+    element: HTMLElement;
+    span: HTMLElement;
+
+    constructor (element: HTMLElement) { 
+        this.element = element;
+        this.element.class += document.ifpress.ifpStatusLine;
+        this.span = document.createElement('span');
+        this.span.class = document.ifpress.ifpLeft;
+        this.span.innerText = document.ifpress.locationName;
+        this.element.appendChild(this.span);
+        this.span.class = document.ifpress.ifpRight;
+        this.span.innerText = document.ifpress.score;
+        this.element.appendChild(this.span);
+        this.span.class = document.ifpress.ifpRight;
+        this.span.innerText = document.ifpress.turn;
+        this.element.appendChild(this.span);
+    }
+  }
+  
+  window.onload = () => {
+    var el = document.getElementById('content');
+    var widget = new Widget(el);
+  };
 ```
 
 ## Themes
