@@ -77,10 +77,35 @@ Then there will be additional and optional extensions based on each author's int
 One of the basic requirements will be for the author to implement ifpress.org settings, so that's going to be a separate extension (you can create FyreVM games without publishing to ifpress.org). Included will be a walk-through (comma separated list of commands to complete game and touch as many parts of the story as possible). This will likely flow through a "ifpress" content type and return JSON.
 
 ## Templates
+
+Templates drive the entire display apparatus for ifpress. We start with a base template and go from there.
+
+### Base Templates
+
+The base template in ifpress.org will contain communication with the virtual machine, with the ifpress back-end services, with local storage, and any other browser management. The base template will be required for all custom templates. It doesn't have any display capabilities on its own.
+
+### Custom Templates
+
+A custom template in ifpress.org inherits the capabilities of the base template, adds its own interactive and display capabilities, and displays a tree of widgets designed by the template creator.
+
+Example:
+
+- Base Template
+  - Custom Template for an Interactive Comic Book
+    - Header Widget
+    - Comic Widget
+      - Panel Widget
+        - Choice Widget
+    - Footer Widget
+
+In this example, we might have a comic book template. The story file tells the template which panel to display relative to any currently displayed panels. The story accepts a choice and updates the panel widget with its changes.
+
+This would allow an author to create an interactive comic book by drawing the art, providing the logic within Inform 7, and using ifpress to publish.
+
 ## Pages
 ## Content Types
 
-### Comtent Type Mapping (for extension authors)
+### Content Type Mapping (for extension authors)
 
 There is a small technical leap from what is emitted by the virtual machine to being usable by ifpress.org. This is a simple mapping exercise that is automated by a well-known content-type called TYPE. This content type will contain the mappings of any content types defined within a given extension. When a story is loaded, the TYPE content type will contain a JSON structure as shown below:
 
