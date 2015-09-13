@@ -78,11 +78,11 @@ One of the basic requirements will be for the author to implement ifpress.org se
 
 ## Templates
 
-Templates drive the entire display apparatus for ifpress. We start with a base template and go from there.
+Templates drive the entire display apparatus for ifpress. We start with a base template and go from there. The template system resides within a content area of ifpress.org. If an author is self-hosting, the content area takes up the entire display area. When hosted on ifpress.org, the content area is below a control-panel header.
 
-### Base Templates
+### Base Template
 
-The base template in ifpress.org will contain communication with the virtual machine, with the ifpress back-end services, with local storage, and any other browser management. The base template will be required for all custom templates. It doesn't have any display capabilities on its own.
+The base template in ifpress.org will contain communication with the virtual machine, with the ifpress container/cms and back-end services, with local storage, and any other browser management. The base template will be required for all custom templates. It doesn't have any display capabilities on its own.
 
 ### Custom Templates
 
